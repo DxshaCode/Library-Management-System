@@ -104,12 +104,14 @@ void addbook()
     fp=fopen("books.txt","ab");
     printf("enter book id:");
     scanf("%d",&b.id);
+    getchar();
     printf("enter book name:");
-    fflush(stdin);
-    scanf("%19s",b.book_name);
+    
+    scanf("%[^\n]",b.book_name);
+    getchar();
     printf("enter author name:");
-    fflush(stdin);
-    scanf("%19s",b.author_name);
+    
+    scanf("%[^\n]",b.author_name);
     printf("book added successfull.");
     fwrite(&b,sizeof(b),1,fp);
     fclose(fp);
