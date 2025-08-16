@@ -3,14 +3,14 @@
 #include<string.h>
 #include<time.h>
 #include<conio.h>
-void addbook();
-void viewbooklist();
-void removebook();
-void issuebook();
-void viewissuelist();
-void calculatefine();
-void returnbook();
-int calculatedays(char issue_date[],char return_date[]);
+void addbook(); //function to add book
+void viewbooklist(); // function to view book lists in library
+void removebook(); // function to remove book from libarary
+void issuebook(); //function to issue book
+void viewissuelist(); //function to view issued book list
+void calculatefine(); //function to calculate total fine
+void returnbook(); //function to remove returned books from issue book list
+int calculatedays(char issue_date[],char return_date[]); //function to calculate number of days
 struct books
 {
     int id;
@@ -31,14 +31,13 @@ struct student
     char return_date[20];
 }s;
 FILE *fp;
-FILE *fi;
 int main()
 {   
     int choice;
     
     while(1){
         system("cls");
-    printf("<~~LIBRARY MANAGEMENT SYSTEM~~>\n");
+    printf("<~~LIBRARY MANAGEMENT SYSTEM~~>\n"); //menu for the user
     printf("1.add book.\n");
     printf("2.view book list.\n");
     printf("3.remove book.\n");
